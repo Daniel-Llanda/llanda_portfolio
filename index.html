@@ -5,29 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Professional Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Tailwind and Flowbite -->
+<script src="https://unpkg.com/flowbite@2.3.0/dist/flowbite.min.js"></script>
+<style>
+  .slide-up {
+    transform: translateY(-100%);
+  }
+
+  .slide-down {
+    transform: translateY(100%);
+  }
+
+  .hide {
+    opacity: 0;
+    visibility: hidden;
+  }
+</style>
+
+
+
 </head>
 <body class="bg-gray-50 font-sans text-gray-900">
+  <!-- Loading Screen -->
+<!-- Loading Screen -->
+<div id="loading-screen" class="fixed inset-0 z-50 flex flex-col bg-white">
+  <div id="loading-top" class="flex-1 bg-indigo-500 transition-all duration-1000 ease-in-out"></div>
+  
+  <!-- Progress Bar -->
+  <div class="h-2 bg-indigo-500 flex items-center justify-center relative overflow-hidden">
+    <div id="progress-bar" class="absolute left-0 top-0 h-full bg-white transition-all duration-[5000ms] ease-linear w-0"></div>
+  </div>
+
+  <div id="loading-bottom" class="flex-1 bg-indigo-500 transition-all duration-1000 ease-in-out"></div>
+</div>
+
+
   <!-- Landing Section -->
-  <section class="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-100 to-purple-200 text-center px-4 py-10 mx-auto w-full">
-    <img src="assets/image/pro_pic.JPEG" alt="Professional Photo" class="w-36 h-36 rounded-full shadow-xl mb-6 border-4 border-white">
-    <h1 class="text-5xl font-extrabold mb-3">Daniel Teddy M. LLanda</h1>
-    <p class="text-2xl text-gray-700 font-semibold">Web Developer | Technology Enthusiast</p>
-    <p class="text-xl text-gray-700 max-w-2xl mt-2">I am an IT student passionate about innovation, skilled in frontend and backend development, and eager to grow while contributing to impactful projects.
+  <section class="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-100 to-indigo-300 text-center px-4 py-10 mx-auto w-full">
+    <img src="assets/image/pro_pic.JPEG" alt="Professional Photo" class="w-40 h-40 rounded-full shadow-xl mb-6 border-4 border-white">
+    <h1 class="text-5xl font-extrabold mb-4">Daniel Teddy M. LLanda</h1>
+    <p class="text-2xl text-gray-700 font-semibold mb-4">Web Developer | Technology Enthusiast</p>
+    <p class="text-xl text-gray-700 max-w-2xl">I am an IT student passionate about innovation, skilled in frontend and backend development, and eager to grow while contributing to impactful projects.
 .
 </p>
   </section>
 
   <!-- Education Section -->
   <section class="px-4 py-10 max-w-5xl mx-auto">
-    <h2 class="text-4xl font-semibold mb-6 border-b-2 border-gray-300 pb-2">Educational Background</h2>
+    <h2 class="text-4xl font-semibold mb-6 border-b-2 border-gray-200 pb-2">Educational Background</h2>
     <ul class="space-y-4">
       <li class="bg-white p-6 rounded-xl shadow-md">
-        <h3 class="text-2xl font-bold">Bachelor of Science in Computer Science</h3>
-        <p class="text-gray-600">XYZ University, 2019 - 2023</p>
+        <h3 class="text-2xl font-bold">Bachelor of Science in Information Technology</h3>
+        <p class="text-gray-600">Eastwoods Professional College of Science and Technology, 2021 - 2025</p>
       </li>
       <li class="bg-white p-6 rounded-xl shadow-md">
-        <h3 class="text-2xl font-bold">High School Diploma</h3>
-        <p class="text-gray-600">ABC High School, 2015 - 2019</p>
+        <h3 class="text-2xl font-bold">Information Communication Technology, Senior High School</h3>
+        <p class="text-gray-600">Eastwoods Academy of Science and Technology , 2018 - 2021</p>
       </li>
     </ul>
   </section>
@@ -35,18 +70,67 @@
   <!-- Projects Section -->
   <section class="px-4 py-10 max-w-5xl mx-auto">
     <h2 class="text-4xl font-semibold mb-6 border-b-2 border-gray-300 pb-2">Projects</h2>
+
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       <div class="bg-white p-6 rounded-xl shadow-md">
-        <h3 class="text-xl font-bold">Project Title</h3>
-        <p class="text-gray-600">A concise overview of the project's purpose, technologies used, and the outcome.</p>
-        <div class="mt-3 flex flex-wrap gap-2">
-          <span class="text-xs bg-blue-200 text-blue-800 px-3 py-1 rounded-full">HTML</span>
-          <span class="text-xs bg-green-200 text-green-800 px-3 py-1 rounded-full">CSS</span>
+        <h3 class="text-xl font-bold mb-2">Bataan Vet Care</h3>
+        <p class="text-gray-600 mb-3">Capstone Project</p>
+        
+        <!-- Carousel Start -->
+        <div id="project-carousel-1" class="relative w-full" data-carousel="slide">
+          <div class="relative h-40 overflow-hidden rounded-lg">
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img src="assets/image/bataan1.PNG" class="block w-full object-cover" alt="Image 1">
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img src="assets/image/bataan2.PNG" class="block w-full object-cover" alt="Image 2">
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img src="assets/image/bataan3.PNG" class="block w-full object-cover" alt="Image 3">
+            </div>
+          </div>
+        </div>
+         
+        <!-- Carousel End -->
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="text-xs bg-blue-200 text-blue-800 px-3 py-1 rounded-full">Tailwind</span>
+          <span class="text-xs bg-green-200 text-green-800 px-3 py-1 rounded-full">Flowbite</span>
+          <span class="text-xs bg-yellow-200 text-yellow-800 px-3 py-1 rounded-full">JavaScript</span>
+          <span class="text-xs bg-red-200 text-red-800 px-3 py-1 rounded-full">Laravel</span>
         </div>
       </div>
-      <!-- Additional project cards can be added similarly -->
+ 
+      <div class="bg-white p-6 rounded-xl shadow-md">
+        <h3 class="text-xl font-bold mb-2">Bataan Vet Care</h3>
+        <p class="text-gray-600 mb-3">Capstone Project</p>
+        
+        <!-- Carousel Start -->
+        <div id="project-carousel-1" class="relative w-full" data-carousel="slide">
+          <div class="relative h-40 overflow-hidden rounded-lg">
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img src="assets/image/bataan1.PNG" class="block w-full object-cover" alt="Image 1">
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img src="assets/image/bataan2.PNG" class="block w-full object-cover" alt="Image 2">
+            </div>
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img src="assets/image/bataan3.PNG" class="block w-full object-cover" alt="Image 3">
+            </div>
+          </div>
+        </div>
+         
+        <!-- Carousel End -->
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="text-xs bg-blue-200 text-blue-800 px-3 py-1 rounded-full">Tailwind</span>
+          <span class="text-xs bg-green-200 text-green-800 px-3 py-1 rounded-full">Flowbite</span>
+          <span class="text-xs bg-yellow-200 text-yellow-800 px-3 py-1 rounded-full">JavaScript</span>
+          <span class="text-xs bg-red-200 text-red-800 px-3 py-1 rounded-full">Laravel</span>
+        </div>
+      </div>
     </div>
   </section>
+
+
 
   <!-- Skills/Tech Stack Section -->
   <section class="px-4 py-10 max-w-5xl mx-auto">
@@ -55,14 +139,80 @@
       <span class="bg-gray-200 text-gray-900 px-4 py-2 rounded-full">HTML</span>
       <span class="bg-gray-200 text-gray-900 px-4 py-2 rounded-full">CSS</span>
       <span class="bg-gray-200 text-gray-900 px-4 py-2 rounded-full">JavaScript</span>
+       <span class="bg-gray-200 text-gray-900 px-4 py-2 rounded-full">Jquery</span>
       <span class="bg-gray-200 text-gray-900 px-4 py-2 rounded-full">Tailwind CSS</span>
-      <span class="bg-gray-200 text-gray-900 px-4 py-2 rounded-full">React</span>
+      <span class="bg-gray-200 text-gray-900 px-4 py-2 rounded-full">Bootstrap</span>
+      <span class="bg-gray-200 text-gray-900 px-4 py-2 rounded-full">PHP</span>
       <span class="bg-gray-200 text-gray-900 px-4 py-2 rounded-full">Laravel</span>
+      <span class="bg-gray-200 text-gray-900 px-4 py-2 rounded-full">MySQL</span>
+      <span class="bg-gray-200 text-gray-900 px-4 py-2 rounded-full">XAMMP</span>
+      <span class="bg-gray-200 text-gray-900 px-4 py-2 rounded-full">Laragon</span>
+      <span class="bg-gray-200 text-gray-900 px-4 py-2 rounded-full">Github</span>
     </div>
   </section>
 
-  <script>
-    // JavaScript functionality can be added here if needed
-  </script>
+  <section class="px-4 mt-5 max-w-5xl mx-auto">
+    <h2 class="text-4xl font-semibold mb-6 border-b-2 border-gray-300 pb-2">Contacts</h2>
+    <div class="flex flex-wrap gap-6">
+    
+
+      <!-- Instagram -->
+      <div class="relative group">
+        <a href="https://instagram.com" target="_blank" class="text-pink-500 hover:text-pink-700 text-3xl">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <div class="absolute left-1/2 -translate-x-1/2 mt-2 opacity-0 group-hover:opacity-100 transition bg-gray-800 text-white text-sm px-2 py-1 rounded shadow">
+          daniel_llanda
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="relative group">
+        <a href="east.danielteddyllaa@gmail.comm" class="text-gray-700 hover:text-gray-900 text-3xl">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <div class="absolute left-1/2 -translate-x-1/2 mt-2 opacity-0 group-hover:opacity-100 transition bg-gray-800 text-white text-sm px-2 py-1 rounded shadow">
+          east.danielteddyllaa@gmail.com
+        </div>
+      </div>
+      <!-- Facebook -->
+      <div class="relative group">
+        <a href="https://www.facebook.com/danielteddy.llanda" target="_blank" class="text-blue-600 hover:text-blue-800 text-3xl">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <div class="absolute left-1/2 -translate-x-1/2 mt-2 opacity-0 group-hover:opacity-100 transition bg-gray-800 text-white text-sm px-2 py-1 rounded shadow">
+          Facebook
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<script>
+  window.addEventListener('load', () => {
+    const progressBar = document.getElementById('progress-bar');
+    const top = document.getElementById('loading-top');
+    const bottom = document.getElementById('loading-bottom');
+    const screen = document.getElementById('loading-screen');
+
+    // Start progress animation
+    setTimeout(() => {
+      progressBar.style.width = '100%';
+    }, 100);
+
+    // After 8 seconds, split the screen
+    setTimeout(() => {
+      top.classList.add('slide-up');
+      bottom.classList.add('slide-down');
+    }, 5000);
+
+    // After animation, hide loader
+    setTimeout(() => {
+      screen.classList.add('hide');
+    }, 6000); // give 1s for slide animation
+  });
+</script>
+
+
 </body>
 </html>
